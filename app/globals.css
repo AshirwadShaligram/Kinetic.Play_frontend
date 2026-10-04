@@ -1,0 +1,478 @@
+@import "tailwindcss";
+
+/* =========================================================
+   PACHAMA — KINETIC MONO DESIGN SYSTEM
+   Font: Plus Jakarta Sans
+   ========================================================= */
+
+:root {
+  /* -------------------------
+     Typography
+     ------------------------- */
+  --font-sans: var(--font-plus-jakarta);
+
+  /* -------------------------
+     Light Mode — Surfaces
+     ------------------------- */
+  --background: #faf9f6;
+  --foreground: #1a1c1a;
+
+  --surface: #faf9f6;
+  --surface-dim: #dbdad7;
+  --surface-bright: #faf9f6;
+
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4f3f0;
+  --surface-container: #efeeeb;
+  --surface-container-high: #e9e8e5;
+  --surface-container-highest: #e3e2df;
+
+  /* -------------------------
+     Text
+     ------------------------- */
+  --on-surface: #1a1c1a;
+  --on-surface-variant: #444748;
+
+  --muted-foreground: #706e6b;
+
+  /* -------------------------
+     Brand / Primary
+     ------------------------- */
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+
+  --primary-container: #1c1b1b;
+  --primary-container-foreground: #858383;
+
+  /* -------------------------
+     Secondary / Accent
+     ------------------------- */
+  --secondary: #755b00;
+  --secondary-foreground: #ffffff;
+
+  --secondary-container: #fccc38;
+  --secondary-container-foreground: #6f5600;
+
+  /* -------------------------
+     Tertiary
+     ------------------------- */
+  --tertiary: #000000;
+  --tertiary-foreground: #ffffff;
+
+  --tertiary-container: #1d1c15;
+  --tertiary-container-foreground: #87847a;
+
+  /* -------------------------
+     Borders
+     ------------------------- */
+  --border: #e8e6e1;
+  --outline: #747878;
+  --outline-variant: #c4c7c7;
+
+  /* -------------------------
+     Semantic
+     ------------------------- */
+  --destructive: #ba1a1a;
+  --destructive-foreground: #ffffff;
+
+  --destructive-container: #ffdad6;
+  --destructive-container-foreground: #93000a;
+
+  /* -------------------------
+     Inverse
+     ------------------------- */
+  --inverse-surface: #2f312f;
+  --inverse-foreground: #f2f1ee;
+  --inverse-primary: #c8c6c5;
+
+  /* -------------------------
+     Fixed Colors
+     ------------------------- */
+  --primary-fixed: #e5e2e1;
+  --primary-fixed-dim: #c8c6c5;
+
+  --secondary-fixed: #ffdf90;
+  --secondary-fixed-dim: #f0c12c;
+
+  /* -------------------------
+     Brand-specific colors
+     ------------------------- */
+
+  /* Warm canvas from your design spec */
+  --canvas: #f8f7f4;
+
+  /* Carbon / primary ink */
+  --ink: #111111;
+
+  /* Amber rating accent */
+  --accent: #f4c430;
+
+  /* Stone / muted surfaces */
+  --stone: #d8d3c8;
+
+  /* Metadata */
+  --text-muted: #706e6b;
+
+  /* Hairline borders */
+  --hairline: #e8e6e1;
+
+  /* -------------------------
+     Radius
+     ------------------------- */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* -------------------------
+     Spacing
+     ------------------------- */
+  --gutter: 1.5rem;
+  --gutter-mobile: 0.75rem;
+
+  --margin: 2.5rem;
+  --margin-mobile: 1rem;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+.dark {
+  /* -------------------------
+     Surfaces
+     ------------------------- */
+
+  --background: #111211;
+  --foreground: #f2f1ee;
+
+  --surface: #111211;
+  --surface-dim: #0d0e0d;
+  --surface-bright: #1c1d1b;
+
+  --surface-container-lowest: #090a09;
+  --surface-container-low: #151614;
+  --surface-container: #1b1c1a;
+  --surface-container-high: #222321;
+  --surface-container-highest: #292a28;
+
+  /* -------------------------
+     Text
+     ------------------------- */
+
+  --on-surface: #f2f1ee;
+  --on-surface-variant: #c4c7c7;
+
+  --muted-foreground: #aaa7a2;
+
+  /* -------------------------
+     Primary
+     ------------------------- */
+
+  --primary: #ffffff;
+  --primary-foreground: #111111;
+
+  --primary-container: #e5e2e1;
+  --primary-container-foreground: #474646;
+
+  /* -------------------------
+     Secondary / Accent
+     ------------------------- */
+
+  --secondary: #fccc38;
+  --secondary-foreground: #241a00;
+
+  --secondary-container: #6f5600;
+  --secondary-container-foreground: #ffdf90;
+
+  /* -------------------------
+     Tertiary
+     ------------------------- */
+
+  --tertiary: #ffffff;
+  --tertiary-foreground: #111111;
+
+  --tertiary-container: #e7e2d7;
+  --tertiary-container-foreground: #49473f;
+
+  /* -------------------------
+     Borders
+     ------------------------- */
+
+  --border: #343633;
+  --outline: #8e9290;
+  --outline-variant: #444745;
+
+  /* -------------------------
+     Semantic
+     ------------------------- */
+
+  --destructive: #ffb4ab;
+  --destructive-foreground: #690005;
+
+  --destructive-container: #93000a;
+  --destructive-container-foreground: #ffdad6;
+
+  /* -------------------------
+     Inverse
+     ------------------------- */
+
+  --inverse-surface: #e4e2de;
+  --inverse-foreground: #2f312f;
+  --inverse-primary: #5f5e5e;
+
+  /* -------------------------
+     Brand-specific
+     ------------------------- */
+
+  --canvas: #111111;
+  --ink: #f5f5f2;
+
+  /* Keep rating accent recognizable */
+  --accent: #f4c430;
+
+  --stone: #36332d;
+  --text-muted: #aaa7a2;
+  --hairline: #343633;
+}
+
+/* =========================================================
+   TAILWIND v4 THEME
+   ========================================================= */
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+
+  --color-muted: var(--surface-container);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+
+  --color-border: var(--border);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-card: var(--surface-container-lowest);
+  --color-card-foreground: var(--on-surface);
+
+  --color-popover: var(--surface-container-lowest);
+  --color-popover-foreground: var(--on-surface);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.display-hero {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 56px;
+  letter-spacing: -0.03em;
+}
+
+.headline-xl {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+}
+
+.headline-lg {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.015em;
+}
+
+.headline-md {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+}
+
+.headline-sm {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.price-display {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 34px;
+  letter-spacing: -0.02em;
+}
+
+.body-lg {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.body-md {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.body-sm {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.label-lg {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.label-md {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+.label-sm {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .display-hero {
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-xl {
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer components {
+  .kinetic-gold-glow {
+    /* border-bottom: 2px solid var(--accent); */
+  }
+  .nav-link-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 1px;
+    border-radius: 9999px;
+    background: var(--accent);
+    box-shadow: 0 -3px 8px rgba(244, 196, 48, 0.35);
+  }
+}
+/* =========================================================
+   RESPONSIVE LAYOUT TOKENS
+   ========================================================= */
+
+:root {
+  --page-gutter: var(--gutter);
+  --page-margin: var(--margin);
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --page-gutter: 1rem;
+    --page-margin: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --page-gutter: var(--gutter-mobile);
+    --page-margin: var(--margin-mobile);
+  }
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
