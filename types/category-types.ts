@@ -12,6 +12,12 @@ export interface CreateSubCategoryInline {
   isVisible: boolean;
 }
 
+export interface SubCategoryUpdateRequest {
+  id?: string;
+  name: string;
+  isVisible: boolean;
+}
+
 // ---------------- CATEGORY ----------------
 
 export interface CategoryResponse {
@@ -42,4 +48,7 @@ export interface UpdateCategoryRequest {
   description?: string;
   logo?: string;
   image?: File;
+  subCategories?: SubCategoryUpdateRequest[];
 }
+
+export type UpdateCategoryResponse = CategoryResponse;

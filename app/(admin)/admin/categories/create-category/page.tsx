@@ -25,7 +25,6 @@ import {
   Forward2,
   ImagePlus,
   Plus,
-  Search,
   ShieldCheck,
 } from "reicon-react";
 import { toast } from "sonner";
@@ -49,7 +48,7 @@ const CreateCategoryPage = () => {
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // -----------------SUBCATEGORIES (local draft list)---------------------
+  // -----------------SUBCATEGORIES---------------------
   const [subCategories, setSubCategories] = useState<SubCategoryDraft[]>([]);
   const [subCategoryName, setSubCategoryName] = useState("");
   const [subCategoryError, setSubCategoryError] = useState("");
@@ -208,18 +207,24 @@ const CreateCategoryPage = () => {
   // -----------------------------------------------
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="p-2">
-      <div className="flex gap-2">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="min-w-0 w-full p-3 flex flex-col gap-3"
+    >
+      {/* Header */}
+      <div className="flex gap-3 justify-between w-full">
         <div className="flex flex-col gap-2">
-          <h1 className="text-2xl font-bold">Create Hardware Category</h1>
-          <p className="text-gray-600">
+          <h1 className="text-2xl font-bold md:text-5xl">
+            Create Hardware Category
+          </h1>
+          <p className="text-gray-600 md:text-lg">
             Configure taxonomy, hardware specifications, visibility parameters,
             and nested subcategories.
           </p>
         </div>
         <Button
           type="submit"
-          className="text-[10px]"
+          className="text-[10px] md:text-lg p-2 h-10"
           disabled={createCategoryMutation.isPending}
         >
           {createCategoryMutation.isPending
@@ -227,18 +232,20 @@ const CreateCategoryPage = () => {
             : "Publish Category"}
         </Button>
       </div>
-      <div className="flex flex-col justify-between gap-3 md:flex-row md:w-185">
-        <div className="flex flex-col gap-4">
-          {/* Basic Category Info */}
-          <div className="border rounded-md  p-2 mt-2">
+
+      {/* Content */}
+      <div className="flex flex-col justify-between gap-10 md:flex-row md:w-full">
+        <div className="flex flex-col gap-4 flex-2">
+          {/* General Category Info */}
+          <div className="border rounded-md flex flex-col p-2">
             <div className="flex justify-between ">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <BrowserTerminal className="size-4 border w-7 h-11 p-1 bg-gray-400 text-black rounded-md" />
                 <div className="flex flex-col">
-                  <h1 className="font-semibold text-xl">
+                  <h1 className="font-semibold text-xl md:text-2xl">
                     General Specification
                   </h1>
-                  <p className="text-gray-600 text-[10px]">
+                  <p className="text-gray-600 text-[10px] md:text-sm">
                     Core taxonomy, and architectural description.
                   </p>
                 </div>
@@ -247,7 +254,7 @@ const CreateCategoryPage = () => {
             </div>
             <div className="flex flex-col gap-4 mt-2">
               <div className="flex flex-col gap-2">
-                <Label htmlFor="name">
+                <Label htmlFor="name" className="md:text-lg">
                   Category Title
                   <span className="text-red-600">*</span>
                 </Label>
@@ -277,7 +284,7 @@ const CreateCategoryPage = () => {
                 )}
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="desc">
+                <Label htmlFor="desc" className="md:text-lg">
                   Category Description & Engineering Spes
                   <span className="text-red-600">*</span>
                 </Label>
@@ -405,7 +412,7 @@ const CreateCategoryPage = () => {
 
           {/* SubCategories */}
           <div className="border rounded-md p-2 flex flex-col gap-3">
-            <div className="flex items-center justify-between h-12">
+            <div className="flex items-center justify-between">
               <div className="flex gap-3">
                 <Bezier2 className="size-4 border w-7 h-11 p-1 bg-gray-400 text-black rounded-md" />
                 <div className="flex flex-col justify-start">
@@ -424,7 +431,7 @@ const CreateCategoryPage = () => {
               <div className="relative flex items-center">
                 <Forward2 className="absolute left-2 size-3" />
                 <Input
-                  className="w-32 h-7 md:w-40  bg-white pl-6"
+                  className="w-32 h-7 md:w-2xl bg-white pl-6"
                   placeholder="e.g. PS5"
                   value={subCategoryName}
                   onChange={(e) => {
@@ -506,7 +513,7 @@ const CreateCategoryPage = () => {
             )}
           </div>
         </div>
-        <div className="flex flex-col gap-4 md:w-96">
+        <div className="flex flex-col gap-4 md:w-96 flex-1">
           {/* Storefront Visibility */}
           <div className="border rounded-md p-2">
             <div>

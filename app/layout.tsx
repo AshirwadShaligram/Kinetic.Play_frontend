@@ -5,6 +5,7 @@ import ReduxProvider from "@/redux/providers/ReduxProvider";
 import AuthProvider from "@/redux/providers/AuthProvider";
 import { Toaster } from "@/components/ui/sonner";
 import QueryProvider from "@/redux/providers/QueryProvider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -24,7 +25,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="h-full flex flex-col">
         <QueryProvider>
           <ReduxProvider>
-            <AuthProvider>{children}</AuthProvider>
+            <AuthProvider>
+              <TooltipProvider>{children}</TooltipProvider>
+            </AuthProvider>
           </ReduxProvider>
         </QueryProvider>
         <Toaster />

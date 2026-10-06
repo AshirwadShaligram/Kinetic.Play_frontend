@@ -42,7 +42,7 @@ const CategoryIconPicker = ({
         <PopoverTrigger
           aria-expanded={open}
           aria-haspopup="dialog"
-          className="h-10 w-full justify-between px-4"
+          className="h-10 w-full justify-between px-4 flex items-center"
         >
           <div className="flex items-center gap-3">
             <div className="flex size-10 shrink-0 items-center justify-center rounded-md border bg-muted/40">
